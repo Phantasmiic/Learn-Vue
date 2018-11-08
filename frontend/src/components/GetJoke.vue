@@ -7,7 +7,7 @@
         <h2>Click the button to get Random jokes</h2>
         <div>
             <button id="btn" class="" v-on:click="getJokes">Get Jokes</button>
-            <div> {{ this.$store.state.joke }} </div>
+            <div> {{ this.$store.state.jokes }} </div>
             <div> {{ this.$store.state.jokeID }} </div>
 
         </div>

@@ -8,14 +8,20 @@ export default new Vuex.Store({
   //complicated stuff with namespace, 
   //need to use mapState helper to figure out the module naming, etc
   state: {
-    jokes: "",
+    jokes: "", //initialized values 
     jokeID: -1
   },
   mutations: {
     updateJoke (state, joke) {
-          state.joke = joke[0];
+          state.jokes = joke[0];
           state.jokeID = joke[1];
     }
+  },
+  getters: {
+    getJoke (state) {
+      return (state.jokes);
+    }
+
   },
   
   modules: {
