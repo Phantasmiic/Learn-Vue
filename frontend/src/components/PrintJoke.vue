@@ -1,4 +1,6 @@
 <template>
+
+    
     <div>
         <div> THE JOKE IS:</div>
         <div> {{ this.$store.getters.getJoke }} </div>

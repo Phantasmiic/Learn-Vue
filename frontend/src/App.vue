@@ -30,13 +30,16 @@
 import HelloWorld from './components/HelloWorld'
 import testComponent from './components/testComponent'
 import GetJoke from './components/GetJoke'
+import JokeTable from './components/JokeTable'
+
 
 //import { store } from './store.js';
 
 export default {
   name: 'App',
   components: {
-    GetJoke
+    GetJoke,
+    JokeTable
   },
   data () {
     return {
