@@ -16,18 +16,24 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <router-view/>
+      <router-link :to="{ name: 'about', params: {} }">About</router-link>
+      <router-link :to="{ name: 'newpage', params: {} }">New Page</router-link>
+      <router-link :to="{ name: 'home', params: {} }">Home Page</router-link>
+
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import testComponent from './components/testComponent'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    testComponent
   },
   data () {
     return {
