@@ -20,6 +20,7 @@
       <router-link :to="{ name: 'about', params: {} }">About</router-link>
       <router-link :to="{ name: 'newpage', params: {} }">New Page</router-link>
       <router-link :to="{ name: 'home', params: {} }">Home Page</router-link>
+      <router-link :to="{ name: 'joke', params: {} }">Get Joke</router-link>
 
     </v-content>
   </v-app>
@@ -28,12 +29,14 @@
 <script>
 import HelloWorld from './components/HelloWorld'
 import testComponent from './components/testComponent'
+import GetJoke from './components/GetJoke'
+
+//import { store } from './store.js';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    testComponent
+    GetJoke
   },
   data () {
     return {

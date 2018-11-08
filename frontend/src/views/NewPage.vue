@@ -1,6 +1,7 @@
 <template>
   <span>
     <testComponent />
+    <p> {{ this.$store.state.joke }} </p>
   </span>
 </template>
 

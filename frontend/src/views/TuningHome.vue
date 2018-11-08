@@ -1,15 +1,15 @@
 <template>
   <span>
-    <testComponent />
+    <GetJoke />
   </span>
 </template>
 
 <script>
-  import testComponent from '../components/testComponent'
+  import GetJoke from '../components/GetJoke'
 
   export default {
     components: {
-      testComponent
+      GetJoke
     }
   }
 </script>

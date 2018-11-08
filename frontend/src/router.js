@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import NewPage from "./views/NewPage.vue";
+import TuningHome from "./views/TuningHome.vue";
 
 Vue.use(Router);
 
@@ -25,6 +26,13 @@ export default new Router({
       path: "/newPage",
       name: "newpage",
       component: NewPage
+    },
+
+    {
+      path: "/getJoke",
+      name: "joke",
+      component: TuningHome
+
     }
   ]
 });
