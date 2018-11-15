@@ -48,11 +48,10 @@
     methods: {
 
         updateJoke_store: function() {
-            console.log(this.storeLengthTest);
             this.$store.commit('updateJoke', [this.jokes[0].joke, this.jokes[0].id]);
         },
         getJokes: function () {
-            console.log("What");
+            console.log(this.jokes);
             this.loading = true;
             axios.get("http://api.icndb.com/jokes/random/10")
             .then((response)  =>  {
@@ -73,12 +72,13 @@
     computed: {
         style () {
             return {
-                'disabled': !this.storeLengthTest,
+                //'disabled': !this.storeLengthTest,
                 color: this.storeLengthTest ? 'info': 'warning',
             }
         },
         storeLengthTest() {
-            return this.$store.state.completeJokes.length > 5;
+            //now this is reactive for some reason
+            return this.$store.state.completeJokes.length > 3;
         }
     }
 

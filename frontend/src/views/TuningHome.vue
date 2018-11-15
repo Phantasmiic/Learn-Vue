@@ -1,14 +1,62 @@
 <template>
-  <span>
-    <v-container>
-      <GetJoke />
-      <PrintJoke />
-      <JokeTable/>
-    </v-container>
 
-  </span>
+  <v-tabs
+    color="cyan"
+    dark
+    slider-color="yellow"
+  >
+    <v-tab ripple>
+      Jokes
+    </v-tab>
+    <v-tab ripple>
+      Item 2
+    </v-tab>
+
+    <v-tab ripple>
+      Stick In
+    </v-tab>
+
+    <v-tab-item>
+      <v-container>
+
+          <v-card flat>
+            <v-card-text>
+              <GetJoke />
+              <PrintJoke />
+              <JokeTable/>
+            </v-card-text>
+          </v-card>
+
+      </v-container>
+
+    </v-tab-item>
+
+    <v-tab-item>  
+      <v-container>
+
+            <v-card flat>
+              <v-card-text>
+  
+              </v-card-text>
+            </v-card>
+
+        </v-container>
+    </v-tab-item>  
+    <v-tab-item>  
+      <v-container>
+
+            <v-card flat>
+              <v-card-text>
+                Test Stick 1
+              </v-card-text>
+            </v-card>
+
+        </v-container>
+    </v-tab-item>  
+  </v-tabs>
+
+  
 </template>
-
 <script>
   import GetJoke from '../components/GetJoke'
   import PrintJoke from '../components/PrintJoke'
