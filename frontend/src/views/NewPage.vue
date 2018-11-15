@@ -6,11 +6,11 @@
 </template>
 
 <script>
-  import testComponent from '../components/testComponent'
+import testComponent from "../components/testComponent";
 
-  export default {
-    components: {
-      testComponent
-    }
+export default {
+  components: {
+    testComponent
   }
+};
 </script>

@@ -4,8 +4,9 @@
     color="cyan"
     dark
     slider-color="yellow"
+    centered  
   >
-    <v-tab ripple>
+    <v-tab >
       Jokes
     </v-tab>
     <v-tab ripple>
@@ -58,16 +59,15 @@
   
 </template>
 <script>
-  import GetJoke from '../components/GetJoke'
-  import PrintJoke from '../components/PrintJoke'
-  import JokeTable from '../components/JokeTable'
+import GetJoke from "../components/GetJoke";
+import PrintJoke from "../components/PrintJoke";
+import JokeTable from "../components/JokeTable";
 
-
-  export default {
-    components: {
-      GetJoke,
-      PrintJoke,
-      JokeTable
-    }
+export default {
+  components: {
+    GetJoke,
+    PrintJoke,
+    JokeTable
   }
+};
 </script>

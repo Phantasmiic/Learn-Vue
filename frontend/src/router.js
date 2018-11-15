@@ -32,7 +32,10 @@ export default new Router({
       path: "/getJoke",
       name: "joke",
       component: TuningHome
-
     }
-  ]
+
+
+  ],
+  mode: "history"
+
 });

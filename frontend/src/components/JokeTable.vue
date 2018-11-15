@@ -9,6 +9,12 @@
             :items = "getAllJokes"
             class = "elevation-1">
 
+            <template slot="no-data">
+                <v-alert :value="true" color="error" icon="warning">
+                    Sorry, nothing to display here :(
+                </v-alert>
+            </template>
+
             <template slot="items" slot-scope="props">
                     <td>{{ props.item.name }}</td>
                     <td class="text-xs-left">{{ props.item.joke }}</td>
@@ -20,44 +26,36 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-        headers: [
-            {
-            text: 'Jokes',
-            align: 'right',
-            sortable: false,
-            value: 'name'
-            },
-            { text: 'Jokes', value: 'jokes' },
-            { text: 'ID', value: 'id' },
-
-        ]
-    }
-    
+      headers: [
+        {
+          text: "Jokes",
+          align: "right",
+          sortable: false,
+          value: "name"
+        },
+        { text: "Jokes", value: "jokes" },
+        { text: "ID", value: "id" }
+      ]
+    };
   },
   methods: {
     getJokesFromStore: function() {
-        console.log([this.$store.state.jokes, this.$store.state.jokeID]);
-        return([this.$store.getters.getJoke, this.$store.state.jokeID])
+      console.log([this.$store.state.jokes, this.$store.state.jokeID]);
+      return [this.$store.getters.getJoke, this.$store.state.jokeID];
     }
-
   },
   computed: {
-      getOneJoke: function() {
-        console.log([this.$store.getters.getJoke, this.$store.getters.getJokeID]);
-        return([{joke: this.$store.getters.getJoke, id: this.$store.getters.getJokeID}])
-      },
-      getAllJokes: function() {
-          return (this.$store.getters.getAllJokes);
-
-      }
-
+    getOneJoke: function() {
+      console.log([this.$store.getters.getJoke, this.$store.getters.getJokeID]);
+      return [
+        { joke: this.$store.getters.getJoke, id: this.$store.getters.getJokeID }
+      ];
+    },
+    getAllJokes: function() {
+      return this.$store.getters.getAllJokes;
+    }
   }
-
-
-}
-
-
+};
 </script>
-

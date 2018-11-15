@@ -3,7 +3,7 @@
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span class="font-weight-light">MAdadadTERIAL DESIGN</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -16,35 +16,51 @@
     </v-toolbar>
 
     <v-content>
+      <v-container>
       <router-view/>
-      <router-link :to="{ name: 'about', params: {} }">About</router-link>
-      <router-link :to="{ name: 'newpage', params: {} }">New Page</router-link>
-      <router-link :to="{ name: 'home', params: {} }">Home Page</router-link>
-      <router-link :to="{ name: 'joke', params: {} }">Get Joke</router-link>
+      <ul>
+        <li>
+          <router-link :to="{ name: 'about', params: {} }">About</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'newpage', params: {} }">New Page</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'home', params: {} }">Home Page</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'joke', params: {} }">Get Joke</router-link>
+        </li>
+    
+
+      </ul>
+
+
+      </v-container>
+
 
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import testComponent from './components/testComponent'
-import GetJoke from './components/GetJoke'
-import JokeTable from './components/JokeTable'
-
+import HelloWorld from "./components/HelloWorld";
+import testComponent from "./components/testComponent";
+import GetJoke from "./components/GetJoke";
+import JokeTable from "./components/JokeTable";
 
 //import { store } from './store.js';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     GetJoke,
     JokeTable
   },
-  data () {
+  data() {
     return {
       //
-    }
+    };
   }
-}
+};
 </script>
