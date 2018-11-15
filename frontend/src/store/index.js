@@ -10,17 +10,38 @@ export default new Vuex.Store({
   state: {
     jokes: "", //initialized values 
     jokeID: -1,
-    completeJokes: [
-    ]
-
+    completeJokes: []
   },
 
   mutations: {
     updateJoke (state, joke) {
           state.jokes = joke[0];
           state.jokeID = joke[1];
-          state.completeJokes.push({joke: state.jokes, id: state.jokeID});
-        }
+          
+          var completeJokes = state.completeJokes;
+          for (var i = 0; i < completeJokes.length; i++) {
+            if (completeJokes[i].id == joke[1]) {
+              break;
+            }
+          } 
+          if (i == completeJokes.length) {
+            state.completeJokes.push({joke: joke[0], id: joke[1]});
+          }
+          else {
+            console.log("Duplicate joke encountered.");
+          }
+        },
+    deleteOldestJoke(state) {
+      if (state.completeJokes.length == 1) {
+        alert("Cannot delete only joke");
+      }
+      else {
+        var joke = state.completeJokes.pop();
+      }
+      return joke;
+    },
+    updateLength(state, direction) {
+    }
   },
   getters: {
     getJoke (state) {

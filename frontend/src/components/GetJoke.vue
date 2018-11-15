@@ -6,14 +6,24 @@
     <main>
         <h2>Click the button to get Random jokes</h2>
         <div>
-            <button id="btn" class="" v-on:click="getJokes">Get Jokes</button>
+            <v-btn color="info">
+                <div v-on:click="getJokes">Get Jokes</div>
+            </v-btn>
+            <v-btn v-bind="style">
+                <div v-on:click="deleteOldestJoke">Delete Oldest Joke</div>
+            </v-btn>
             <div> {{ this.$store.state.jokes }} </div>
             <div> {{ this.$store.state.jokeID }} </div>
+            <div> {{ this.$store.state.completeJokes.length }} </div>
+
 
         </div>
 
         <div v-if="loading">
-          Loading.....
+          ...Loading.....
+        </div>
+        <div v-else>
+            Updated.
         </div>
 
       <div class="wrapper">
@@ -30,13 +40,15 @@
         data () {
             return {
                 jokes: [{"joke": "Data has not been fetched yet", "id": -1}],
-                loading: false
+                loading: false,
+                //why below not reactive idk 
+                //storeLength: this.$store.state.completeJokes.length > 1
         }
     }, 
     methods: {
 
         updateJoke_store: function() {
-            console.log(this.jokes);
+            console.log(this.storeLengthTest);
             this.$store.commit('updateJoke', [this.jokes[0].joke, this.jokes[0].id]);
         },
         getJokes: function () {
@@ -52,9 +64,23 @@
 
             //update store
             this.updateJoke_store();
+        },
+        deleteOldestJoke: function() {
+            this.$store.commit('deleteOldestJoke');
         }
 
     },
+    computed: {
+        style () {
+            return {
+                'disabled': !this.storeLengthTest,
+                color: this.storeLengthTest ? 'info': 'warning',
+            }
+        },
+        storeLengthTest() {
+            return this.$store.state.completeJokes.length > 5;
+        }
+    }
 
 }
 </script>
